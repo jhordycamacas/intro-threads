@@ -10,7 +10,7 @@ public class MultiTimerConsole {
         TimerTask timerC = new TimerTask("Temporizador C", 3);
         //Se usa Lambda: () -> expresion implementa Runnable en linea
 
-        new Thread(() -> timerA.run(), "Hilo-A").start();
+        new Thread(timerA::run, "Hilo-A").start();
         new Thread(() -> timerB.run(), "Hilo-B").start();
         new Thread(() -> timerC.run(), "Hilo-C").start();
     }
